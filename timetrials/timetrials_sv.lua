@@ -14,7 +14,6 @@ function saveScores(scores)
         io.close( file )
         return true
     else
-        io.close( file )
         return false
     end
 end
@@ -31,7 +30,6 @@ function getScores()
         io.close( file )
         return myTable
     end
-    io.close( file )
     return {}
 end
 
