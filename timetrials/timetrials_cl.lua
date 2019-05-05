@@ -30,10 +30,7 @@ end)
 
 -- Function that runs when a race is NOT active
 function preRace()
-    -- Initialize local variables
-    local player = GetPlayerPed(-1)
-
-    -- Reset race state
+    -- Initialize race state
     raceState.cP = 1
     raceState.index = 0 
     raceState.startTime = 0
@@ -44,6 +41,9 @@ function preRace()
     while raceState.index == 0 do
         -- Update every frame
         Citizen.Wait(0)
+
+        -- Get player
+        local player = GetPlayerPed(-1)
 
         -- Teleport player to waypoint if active and button pressed
         if IsWaypointActive() and IsControlJustReleased(0, 182) then
